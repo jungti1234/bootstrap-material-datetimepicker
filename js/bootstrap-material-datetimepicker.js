@@ -1044,15 +1044,15 @@
 				$(parent.find('#h-' + value)).attr('fill', '#8BC34A');
 				$(parent.find('#th-' + value)).attr('fill', '#fff');
 
+				if(this.params.shortTime === true && this.isPM())
+				{
+				 	value += 12;
+				}
+
 				this.currentDate.hour(parseInt(value));
 				this.showTime(this.currentDate);
 
 				this.animateHands();
-
-				if(this.params.shortTime === true && this.isPM())
-				{
-				 	dataHour += 12;
-				}
 
 				if(this.params.switchOnClick === true)
 					setTimeout(this.initMinutes.bind(this), 200);
